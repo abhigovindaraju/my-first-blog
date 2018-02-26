@@ -6,12 +6,13 @@
       <div>
             <h1><a href="/">Centurions Cricbay website</a></h1>
       </div>
-
-      <div>
-            <p>published: 02.22.2018, 11:44</p>
-            <h2><a href="">First post</a></h2>
-            <p>Cricket team</p>
-        </div>
+      {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+      {% endfor %}
 
     </body>
 </html>
